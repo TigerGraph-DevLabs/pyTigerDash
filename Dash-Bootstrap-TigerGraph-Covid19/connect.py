@@ -15,14 +15,18 @@ def getConnection():
                                     username=username,
                                     password=password,
                                     useCert=False, 
-                                    version='3.0.5',
-                                    dev=True
-                                    ) #usercert=false
-        secret = None #conn.createSecret()
-        
-        token = None
-        return conn            
+                                    version='3.0.5'
+                                    ) 
     except Exception as e:
         print(e)
         print('There was an error. Make sure to start your box and try again')
+    try:
+        secret = conn.createSecret()
+        token = conn.getToken(secret, setToken=True)
+        
+                 
+    except Exception as e:
+        print(e)
+        print('There was an error. Make sure to start your box and try again')
+    return conn   
 
