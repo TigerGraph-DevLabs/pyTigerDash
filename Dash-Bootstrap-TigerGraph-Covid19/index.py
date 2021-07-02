@@ -361,4 +361,4 @@ if __name__ == "__main__":
     app.layout = html.Div([dcc.Location(id="url"), navbar, sidebar, content])
     print("Fully loaded in ::   {}".format(str(timedelta(seconds=(time.time()-start_time)))))
     print("--------------------------------------------------------")
-    app.run_server(port=8881, debug=True)#, dev_tools_hot_reload=True)
+    app.run_server(host="0.0.0.0",port=8881, debug=True)#, dev_tools_hot_reload=True)
